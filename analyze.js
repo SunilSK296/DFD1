@@ -2,14 +2,14 @@ const image = document.getElementById("scanImage");
 const progress = document.getElementById("progressFill");
 const statusText = document.getElementById("statusText");
 
-// get uploaded image from previous page
+// get uploaded image
 const fileData = localStorage.getItem("uploadedImage");
 
 if (fileData) {
   image.src = fileData;
 }
 
-// fake ML processing steps
+// steps
 const steps = [
   "Analyzing pixel patterns...",
   "Checking metadata...",
@@ -21,6 +21,40 @@ const steps = [
 let progressValue = 0;
 let stepIndex = 0;
 
+// 🔥 SEND TO BACKEND
+async function sendToBackend() {
+  try {
+    const res = await fetch(fileData);
+    const blob = await res.blob();
+
+    const response = await fetch(
+      "https://forgery-backend.onrender.com/detect",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/octet-stream",
+          "X-Filename": "document.jpg"
+        },
+        body: blob
+      }
+    );
+
+    const result = await response.json();
+
+    console.log("AI Result:", result);
+
+    // store result
+    localStorage.setItem("analysisResult", JSON.stringify(result));
+
+    window.location.href = "result.html";
+
+  } catch (err) {
+    console.error(err);
+    alert("Error connecting to backend");
+  }
+}
+
+// progress animation
 const interval = setInterval(() => {
   progressValue += 2;
   progress.style.width = progressValue + "%";
@@ -32,11 +66,6 @@ const interval = setInterval(() => {
 
   if (progressValue >= 100) {
     clearInterval(interval);
-
-    // next page later
-    setTimeout(() => {
-      alert("Analysis Complete (connect backend here)");
-      window.location.href = "results.html";
-    }, 500);
+    sendToBackend(); // 🔥 REAL AI CALL
   }
 }, 100);
