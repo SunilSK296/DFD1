@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div>
+        <strong>Our App</strong><br>
+        <small>Document Forgery Analysis</small>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step inactive">Upload</div>
+      <div class="step inactive">Analyze</div>
+      <div class="step active">Results</div>
+    </div>
+  </div>
+</header>
+
+<main class="container grid">
+
+  <!-- LEFT PANEL -->
+  <div class="preview-panel">
+
+    <div class="panel-header">
+      <div>
+        <h3>Document Preview</h3>
+        <p>Pan, zoom, and inspect detected anomalies</p>
+      </div>
+
+      <div class="tools">
+        <button id="zoomIn">+</button>
+        <button id="zoomOut">−</button>
+        <button id="reset">⤢</button>
+      </div>
+    </div>
+
+    <div class="image-wrapper" id="wrapper">
+      <img id="resultImage">
+
+      <!-- TAGS -->
+      <div class="tag" style="top:40%; left:55%">Error Analysis</div>
+      <div class="tag" style="top:55%; left:60%">Font Mismatch</div>
+      <div class="tag" style="top:65%; left:50%">Compression</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="result-panel">
+
+    <div class="panel-header green">
+      <h3>Analysis Results</h3>
+      <p>4 anomalies detected</p>
+    </div>
+
+    <div class="score-box">
+      <div class="circle">
+        <span id="scoreValue">0%</span>
+      </div>
+
+      <span class="risk-badge">Critical Risk</span>
+
+      <p class="desc">
+        Strong evidence of document manipulation detected.
+      </p>
+    </div>
+
+    <div class="controls">
+      <h4>Overlay Controls</h4>
+
+      <label>
+        Show Overlays
+        <input type="checkbox" id="toggleOverlay" checked>
+      </label>
+
+      <label>
+        Opacity
+        <input type="range" id="opacityRange" min="0" max="100" value="80">
+      </label>
+    </div>
+
+    <button class="download-btn">Download Report</button>
+    <button class="new-btn">New Analysis</button>
+
+  </div>
+
+</main>
+
+<footer>
+  Powered by AI • Simulated Analysis • For demonstration purposes only
+</footer>
+
+<script src="result.js"></script>
+</body>
+</html>
