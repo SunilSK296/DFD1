@@ -1,0 +1,41 @@
+# core/rules/rule_definitions/pan.yaml
+
+rules:
+  - id: pan_number_format
+    description: "PAN format: AAAAA9999A"
+    pattern: "[A-Z]{5}[0-9]{4}[A-Z]{1}"
+    required: true
+    signal_type: pan_format_invalid
+    severity: HIGH
+    weight: 40
+
+  - id: pan_4th_char_category
+    description: "4th character must be valid entity category"
+    check: pan_category
+    required: true
+    signal_type: pan_category_invalid
+    severity: MEDIUM
+    weight: 20
+
+  - id: pan_dob_format
+    description: "Date of birth format"
+    pattern: "\\d{2}/\\d{2}/\\d{4}"
+    required: false
+    signal_type: dob_format_invalid
+    severity: LOW
+    weight: 10
+
+required_keywords:
+  - permanent account number
+  - income tax
+
+layout_checks:
+  - region: photo_region
+    check: not_blank
+    severity: MEDIUM
+    weight: 20
+
+  - region: signature_region
+    check: not_blank
+    severity: LOW
+    weight: 10

@@ -1,0 +1,185 @@
+2026-04-19 09:39:08 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:39:08 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:39:11 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:39:11 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:39:11 [INFO] core: === Starting document analysis ===
+2026-04-19 09:39:11 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:39:11 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:39:11 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (1280, 960), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 09:39:13 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(1280, 960)
+2026-04-19 09:39:13 [INFO] core.ocr.engine: Running OCR (hash=ab2fb6ca)…
+2026-04-19 09:39:27 [INFO] core.ocr.easyocr_reader: Loading EasyOCR model (first run, ~10 s)…
+2026-04-19 09:39:27 [WARNING] easyocr.easyocr: Using CPU. Note: This module is much faster with a GPU.
+2026-04-19 09:39:27 [WARNING] easyocr.easyocr: Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2026-04-19 09:40:11 [INFO] easyocr.easyocr: Download complete
+2026-04-19 09:40:11 [ERROR] __main__: Analysis failed
+Traceback (most recent call last):
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\app\main.py", line 125, in <module>
+    report = analyze_document(io.BytesIO(file_bytes))
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\core\__init__.py", line 46, in analyze_document
+    ocr_result = run_ocr(image, use_cache=use_ocr_cache)
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\core\ocr\engine.py", line 86, in run_ocr
+    primary_blocks = EasyOCRReader.read(image)
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\core\ocr\easyocr_reader.py", line 41, in read
+    reader = cls.get_reader()
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\core\ocr\easyocr_reader.py", line 27, in get_reader
+    cls._reader = easyocr.Reader(OCR_LANGUAGES, gpu=OCR_GPU)
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\venv\lib\site-packages\easyocr\easyocr.py", line 140, in __init__
+    self.setModelLanguage('telugu', lang_list, ['te','en'], '["te","en"]')
+  File "C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\venv\lib\site-packages\easyocr\easyocr.py", line 286, in setModelLanguage
+    raise ValueError(language.capitalize() + ' is only compatible with English, try lang_list=' + list_lang_string)
+ValueError: Telugu is only compatible with English, try lang_list=["te","en"]
+2026-04-19 09:48:09 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:48:09 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:48:14 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:48:14 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:48:14 [INFO] core: === Starting document analysis ===
+2026-04-19 09:48:14 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:48:14 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1280, 960)
+2026-04-19 09:48:14 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (1280, 960), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 09:48:15 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(1280, 960)
+2026-04-19 09:48:15 [INFO] core.ocr.engine: Running OCR (hash=ab2fb6ca)…
+2026-04-19 09:48:21 [INFO] core.ocr.easyocr_reader: Loading EasyOCR model (first run, ~10 s)…
+2026-04-19 09:48:21 [WARNING] easyocr.easyocr: Using CPU. Note: This module is much faster with a GPU.
+2026-04-19 09:48:22 [WARNING] easyocr.easyocr: Downloading recognition model, please wait. This may take several minutes depending upon your network connection.
+2026-04-19 09:48:30 [INFO] easyocr.easyocr: Download complete.
+2026-04-19 09:48:33 [INFO] core.ocr.easyocr_reader: EasyOCR model loaded.
+2026-04-19 09:48:38 [INFO] core.ocr.engine: OCR done: 29 blocks, avg_conf=0.57, languages=['en']
+2026-04-19 09:48:39 [INFO] core: Classification: aadhaar (conf=0.92)
+2026-04-19 09:48:39 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 1 signals
+2026-04-19 09:48:39 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 1 signals
+2026-04-19 09:48:39 [WARNING] core.forgery.layout_validator: QR check failed: Could not find module 'C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\venv\lib\site-packages\pyzbar\libzbar-64.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-04-19 09:48:39 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 09:48:39 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 1 signals
+2026-04-19 09:48:39 [INFO] core.forgery.orchestrator: Forgery analysis complete: 3 total signals across all subsystems
+2026-04-19 09:48:39 [INFO] core.explainability.explainer: Report: verdict=NEEDS REVIEW, score=50.7, reasons=3, doc_type=aadhaar
+2026-04-19 09:48:40 [INFO] core: === Analysis done: verdict=NEEDS REVIEW, score=50.7 ===
+2026-04-19 09:54:05 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:05 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:07 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:07 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:07 [INFO] core: === Starting document analysis ===
+2026-04-19 09:54:07 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:07 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:07 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (1080, 671), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 09:54:08 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(1080, 671)
+2026-04-19 09:54:08 [INFO] core.ocr.engine: Running OCR (hash=4d7ab0bb)…
+2026-04-19 09:54:11 [INFO] core.ocr.engine: OCR done: 20 blocks, avg_conf=0.44, languages=['en']
+2026-04-19 09:54:11 [INFO] core.classifier.doc_classifier: Classification: doc_type=pan, confidence=1.00, top signals=['primary:permanent account number', 'secondary:date of birth', 'secondary:signature']
+2026-04-19 09:54:11 [INFO] core: Classification: pan (conf=1.00)
+2026-04-19 09:54:11 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 2 signals
+2026-04-19 09:54:11 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 1 signals
+2026-04-19 09:54:11 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 09:54:22 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 1 signals
+2026-04-19 09:54:22 [INFO] core.forgery.orchestrator: Forgery analysis complete: 4 total signals across all subsystems
+2026-04-19 09:54:22 [INFO] core.explainability.explainer: Report: verdict=SUSPICIOUS, score=67.6, reasons=4, doc_type=pan
+2026-04-19 09:54:22 [INFO] core: === Analysis done: verdict=SUSPICIOUS, score=67.6 ===
+2026-04-19 09:54:56 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:56 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:58 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:58 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:58 [INFO] core: === Starting document analysis ===
+2026-04-19 09:54:58 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 09:54:58 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(1080, 671)
+2026-04-19 09:54:58 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (1080, 671), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 09:55:00 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(1080, 671)
+2026-04-19 09:55:00 [DEBUG] core.ocr.engine: OCR cache hit for 4d7ab0bb
+2026-04-19 09:55:00 [INFO] core.classifier.doc_classifier: Classification: doc_type=pan, confidence=1.00, top signals=['primary:permanent account number', 'secondary:date of birth', 'secondary:signature']
+2026-04-19 09:55:00 [INFO] core: Classification: pan (conf=1.00)
+2026-04-19 09:55:00 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 2 signals
+2026-04-19 09:55:00 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 1 signals
+2026-04-19 09:55:00 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 09:55:15 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 1 signals
+2026-04-19 09:55:15 [INFO] core.forgery.orchestrator: Forgery analysis complete: 4 total signals across all subsystems
+2026-04-19 09:55:15 [INFO] core.explainability.explainer: Report: verdict=SUSPICIOUS, score=67.6, reasons=4, doc_type=pan
+2026-04-19 09:55:15 [INFO] core: === Analysis done: verdict=SUSPICIOUS, score=67.6 ===
+2026-04-19 10:01:15 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:01:15 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(667, 1600)
+2026-04-19 10:01:18 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:01:18 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(667, 1600)
+2026-04-19 10:01:18 [INFO] core: === Starting document analysis ===
+2026-04-19 10:01:18 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:01:18 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(667, 1600)
+2026-04-19 10:01:18 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (667, 1600), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 10:01:19 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(667, 1600)
+2026-04-19 10:01:19 [INFO] core.ocr.engine: Running OCR (hash=7629a569)…
+2026-04-19 10:01:26 [INFO] core.ocr.easyocr_reader: Loading EasyOCR model (first run, ~10 s)…
+2026-04-19 10:01:26 [WARNING] easyocr.easyocr: Using CPU. Note: This module is much faster with a GPU.
+2026-04-19 10:01:27 [WARNING] easyocr.easyocr: Downloading recognition model, please wait. This may take several minutes depending upon your network connection.
+2026-04-19 10:03:24 [INFO] easyocr.easyocr: Download complete.
+2026-04-19 10:03:27 [INFO] core.ocr.easyocr_reader: EasyOCR model loaded.
+2026-04-19 10:03:43 [INFO] core.ocr.engine: OCR done: 40 blocks, avg_conf=0.39, languages=['en']
+2026-04-19 10:03:43 [INFO] core: Classification: aadhaar (conf=0.92)
+2026-04-19 10:03:43 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 2 signals
+2026-04-19 10:03:43 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 1 signals
+2026-04-19 10:03:43 [WARNING] core.forgery.layout_validator: QR check failed: Could not find module 'C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\venv\lib\site-packages\pyzbar\libzbar-64.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-04-19 10:03:43 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 10:04:36 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 2 signals
+2026-04-19 10:04:36 [INFO] core.forgery.orchestrator: Forgery analysis complete: 5 total signals across all subsystems
+2026-04-19 10:04:36 [INFO] core.explainability.explainer: Report: verdict=SUSPICIOUS, score=67.5, reasons=4, doc_type=aadhaar
+2026-04-19 10:04:36 [INFO] core: === Analysis done: verdict=SUSPICIOUS, score=67.5 ===
+2026-04-19 10:09:37 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:09:37 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2026-04-19 10:09:37 [DEBUG] PIL.PngImagePlugin: STREAM b'sRGB' 41 1
+2026-04-19 10:09:37 [DEBUG] PIL.PngImagePlugin: STREAM b'gAMA' 54 4
+2026-04-19 10:09:37 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 70 9
+2026-04-19 10:09:37 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 91 65445
+2026-04-19 10:09:37 [INFO] core.ingestion: Loaded image 'upload': format=PNG, size=(859, 572)
+2026-04-19 10:09:42 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'sRGB' 41 1
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'gAMA' 54 4
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 70 9
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 91 65445
+2026-04-19 10:09:42 [INFO] core.ingestion: Loaded image 'upload': format=PNG, size=(859, 572)
+2026-04-19 10:09:42 [INFO] core: === Starting document analysis ===
+2026-04-19 10:09:42 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'sRGB' 41 1
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'gAMA' 54 4
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 70 9
+2026-04-19 10:09:42 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 91 65445
+2026-04-19 10:09:42 [INFO] core.ingestion: Loaded image 'upload': format=PNG, size=(859, 572)
+2026-04-19 10:09:42 [INFO] core: Ingestion complete: {'format': 'PNG', 'original_size': (859, 572), 'dpi': 96.012, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 10:09:43 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(859, 572)
+2026-04-19 10:09:43 [INFO] core.ocr.engine: Running OCR (hash=50350377)…
+2026-04-19 10:09:48 [INFO] core.ocr.engine: OCR done: 11 blocks, avg_conf=0.55, languages=['en']
+2026-04-19 10:09:48 [INFO] core.classifier.doc_classifier: Classification: insufficient signals — returning 'unknown'
+2026-04-19 10:09:48 [INFO] core: Classification: unknown (conf=0.00)
+2026-04-19 10:09:48 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 0 signals
+2026-04-19 10:09:48 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 10:09:48 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 0 signals
+2026-04-19 10:09:48 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 1 signals
+2026-04-19 10:09:48 [INFO] core.forgery.orchestrator: Forgery analysis complete: 1 total signals across all subsystems
+2026-04-19 10:09:48 [INFO] core.explainability.explainer: Report: verdict=NEEDS REVIEW, score=28.0, reasons=1, doc_type=unknown
+2026-04-19 10:09:48 [INFO] core: === Analysis done: verdict=NEEDS REVIEW, score=28.0 ===
+2026-04-19 10:11:11 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:11:11 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(225, 225)
+2026-04-19 10:11:14 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:11:14 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(225, 225)
+2026-04-19 10:11:14 [INFO] core: === Starting document analysis ===
+2026-04-19 10:11:14 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:11:14 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(225, 225)
+2026-04-19 10:11:14 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (225, 225), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 10:11:15 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(225, 225)
+2026-04-19 10:11:15 [INFO] core.ocr.engine: Running OCR (hash=48c4717f)…
+2026-04-19 10:11:17 [INFO] core.ocr.engine: OCR done: 8 blocks, avg_conf=0.67, languages=['en']
+2026-04-19 10:11:17 [INFO] core: Classification: aadhaar (conf=1.00)
+2026-04-19 10:11:17 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 3 signals
+2026-04-19 10:11:17 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 0 signals
+2026-04-19 10:11:17 [WARNING] core.forgery.layout_validator: QR check failed: Could not find module 'C:\Users\sunil\OneDrive\Documents\doc_forgery_detector\venv\lib\site-packages\pyzbar\libzbar-64.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-04-19 10:11:17 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 10:11:17 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 0 signals
+2026-04-19 10:11:17 [INFO] core.forgery.orchestrator: Forgery analysis complete: 3 total signals across all subsystems
+2026-04-19 10:11:17 [INFO] core.explainability.explainer: Report: verdict=SUSPICIOUS, score=58.7, reasons=2, doc_type=aadhaar
+2026-04-19 10:11:17 [INFO] core: === Analysis done: verdict=SUSPICIOUS, score=58.7 ===
+2026-04-19 10:28:39 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:28:39 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(904, 1280)
+2026-04-19 10:28:41 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:28:41 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(904, 1280)
+2026-04-19 10:28:41 [INFO] core: === Starting document analysis ===
+2026-04-19 10:28:41 [WARNING] core.ingestion: Unknown extension '', attempting image load.
+2026-04-19 10:28:41 [INFO] core.ingestion: Loaded image 'upload': format=JPEG, size=(904, 1280)
+2026-04-19 10:28:41 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (904, 1280), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
+2026-04-19 10:28:42 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(904, 1280)
+2026-04-19 10:28:43 [INFO] core.ocr.engine: Running OCR (hash=6ff3b237)…

@@ -1,0 +1,36 @@
+# core/rules/rule_definitions/sslc.yaml
+
+rules:
+  - id: sslc_register_number
+    description: "Register number in expected format"
+    pattern: "\\d{2}-\\d{2}-\\d{6}|\\d{7,10}"
+    required: true
+    signal_type: required_field_missing
+    severity: MEDIUM
+    weight: 20
+
+  - id: sslc_marks_sum
+    description: "Sum of subject marks must equal stated total"
+    check: marks_sum
+    required: false
+    signal_type: marks_sum_mismatch
+    severity: CRITICAL
+    weight: 50
+
+  - id: sslc_percentage
+    description: "Percentage should be consistent with marks"
+    check: percentage_consistency
+    required: false
+    signal_type: marks_sum_mismatch
+    severity: MEDIUM
+    weight: 25
+
+required_keywords:
+  - sslc
+  - secondary school
+
+layout_checks:
+  - region: header_region
+    check: not_blank
+    severity: LOW
+    weight: 10

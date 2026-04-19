@@ -1,0 +1,51 @@
+# core/rules/rule_definitions/aadhaar.yaml
+# Aadhaar-specific validation rules.
+# Each rule is evaluated by the rule engine against extracted fields.
+
+rules:
+  - id: aadhaar_number_format
+    description: "12-digit number in XXXX XXXX XXXX format"
+    pattern: "\\d{4}[\\s\\-]?\\d{4}[\\s\\-]?\\d{4}"
+    required: true
+    signal_type: aadhaar_number_not_found
+    severity: HIGH
+    weight: 30
+
+  - id: aadhaar_verhoeff_checksum
+    description: "Verhoeff checksum validation"
+    check: verhoeff
+    required: true
+    signal_type: aadhaar_checksum_fail
+    severity: CRITICAL
+    weight: 45
+
+  - id: aadhaar_dob_format
+    description: "Date of birth in DD/MM/YYYY or DD-MM-YYYY"
+    pattern: "\\d{2}[/\\-]\\d{2}[/\\-]\\d{4}"
+    required: false
+    signal_type: dob_format_invalid
+    severity: LOW
+    weight: 10
+
+  - id: aadhaar_pincode
+    description: "Valid 6-digit Indian pincode"
+    pattern: "[1-9][0-9]{5}"
+    required: false
+    signal_type: pincode_invalid
+    severity: LOW
+    weight: 10
+
+required_keywords:
+  - aadhaar
+  - uidai
+
+layout_checks:
+  - region: qr_region
+    check: qr_present
+    severity: HIGH
+    weight: 35
+
+  - region: photo_region
+    check: not_blank
+    severity: MEDIUM
+    weight: 20

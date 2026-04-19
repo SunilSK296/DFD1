@@ -1,0 +1,45 @@
+# core/scoring/score_config.yaml
+# All weights and thresholds live here — never hard-coded in logic.
+# Adjust these values to tune sensitivity without touching Python code.
+
+weights:
+  # ── Text Validation ──────────────────────────────────────────────────
+  aadhaar_checksum_fail:        45
+  aadhaar_number_not_found:     30
+  pan_format_invalid:           40
+  pan_category_invalid:         20
+  marks_sum_mismatch:           50
+  required_field_missing:       20
+  pattern_partial_match:        15
+  pincode_invalid:              10
+
+  # ── Layout Validation ────────────────────────────────────────────────
+  qr_code_absent:               35
+  qr_region_misplaced:          20
+  photo_region_blank:           20
+  photo_region_misplaced:       25
+  logo_region_absent:           20
+  text_alignment_broken:        15
+
+  # ── Font / Visual ────────────────────────────────────────────────────
+  font_size_cluster_anomaly:    20
+  ocr_confidence_hotspot:       25
+
+  # ── Image Forensics ──────────────────────────────────────────────────
+  ela_high_anomaly:             30
+  ela_medium_anomaly:           15
+  copy_move_detected:           35
+  noise_inconsistency:          20
+
+# Default weight for unrecognised signal types
+default_weight: 10
+
+thresholds:
+  genuine:    25    # score 0–25   → GENUINE
+  review:     55    # score 26–55  → NEEDS REVIEW
+  # above 55       → SUSPICIOUS
+
+# Normalisation curve: sigmoid prevents a single signal from maxing the score
+normalization:
+  method: sigmoid
+  scale_factor: 80   # higher = more forgiving (spread the curve)
