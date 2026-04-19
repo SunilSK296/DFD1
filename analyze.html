@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analyzing Document</title>
+  <link rel="stylesheet" href="analyze.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div>
+        <strong>Our App</strong><br>
+        <small>Document Forgery Analysis</small>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step inactive">Upload</div>
+      <div class="divider"></div>
+      <div class="step active">Analyze</div>
+      <div class="divider"></div>
+      <div class="step inactive">Results</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="analyze-card">
+
+    <div class="analyze-header">
+      <h2>Analyzing Document</h2>
+      <p>This may take a few moments...</p>
+    </div>
+
+    <div class="scan-area">
+      <img id="scanImage" src="" />
+
+      <div class="scan-line"></div>
+      <div class="scan-label">SCANNING</div>
+    </div>
+
+    <div class="status">
+      <span id="statusText">Analyzing pixel patterns...</span>
+    </div>
+
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Powered by AI • Simulated Analysis • For demonstration purposes only
+</footer>
+
+<script src="analyze.js"></script>
+</body>
+</html>
