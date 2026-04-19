@@ -183,3 +183,13 @@ ValueError: Telugu is only compatible with English, try lang_list=["te","en"]
 2026-04-19 10:28:41 [INFO] core: Ingestion complete: {'format': 'JPEG', 'original_size': (904, 1280), 'dpi': 72, 'page_count': 1, 'source_path': 'upload'}
 2026-04-19 10:28:42 [DEBUG] core.preprocessor: Preprocessing done: skew=0.0°, size=(904, 1280)
 2026-04-19 10:28:43 [INFO] core.ocr.engine: Running OCR (hash=6ff3b237)…
+2026-04-19 10:29:16 [INFO] core.ocr.engine: OCR done: 103 blocks, avg_conf=0.68, languages=['en']
+2026-04-19 10:29:16 [INFO] core.classifier.doc_classifier: Classification: doc_type=sslc, confidence=1.00, top signals=['primary:secondary school', 'primary:board of secondary education', 'secondary:marks']
+2026-04-19 10:29:16 [INFO] core: Classification: sslc (conf=1.00)
+2026-04-19 10:29:16 [DEBUG] core.forgery.orchestrator: Subsystem 'text': 1 signals
+2026-04-19 10:29:16 [DEBUG] core.forgery.orchestrator: Subsystem 'layout': 0 signals
+2026-04-19 10:29:16 [DEBUG] core.forgery.orchestrator: Subsystem 'font': 1 signals
+2026-04-19 10:29:55 [DEBUG] core.forgery.orchestrator: Subsystem 'image': 1 signals
+2026-04-19 10:29:55 [INFO] core.forgery.orchestrator: Forgery analysis complete: 3 total signals across all subsystems
+2026-04-19 10:29:55 [INFO] core.explainability.explainer: Report: verdict=NEEDS REVIEW, score=50.7, reasons=3, doc_type=sslc
+2026-04-19 10:29:55 [INFO] core: === Analysis done: verdict=NEEDS REVIEW, score=50.7 ===
