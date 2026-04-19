@@ -1,0 +1,154 @@
+:root {
+  --primary: #0F766E;
+  --border: #E2E3E5;
+  --bg: #F7F7F8;
+}
+
+body {
+  background: var(--bg);
+  font-family: system-ui;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER same style */
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.active {
+  background: var(--primary);
+  color: white;
+}
+
+.inactive {
+  background: #e5e7eb;
+  color: #555;
+}
+
+.divider {
+  width: 30px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* CARD */
+.analyze-card {
+  background: white;
+  border-radius: 16px;
+  margin-top: 50px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.analyze-header {
+  background: var(--primary);
+  color: white;
+  padding: 20px;
+}
+
+.analyze-header h2 {
+  margin: 0;
+}
+
+.scan-area {
+  position: relative;
+  padding: 30px;
+  text-align: center;
+}
+
+.scan-area img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* SCAN LINE */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 400px;
+  height: 3px;
+  background: orange;
+  transform: translateX(-50%);
+  animation: scan 2s infinite linear;
+}
+
+@keyframes scan {
+  0% { top: 20%; }
+  100% { top: 80%; }
+}
+
+.scan-label {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* STATUS */
+.status {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* PROGRESS */
+.progress-bar {
+  height: 6px;
+  background: #eee;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, green, orange);
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
